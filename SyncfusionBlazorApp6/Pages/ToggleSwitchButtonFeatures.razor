@@ -12,8 +12,16 @@
                 </div>
                 <div>
                     <label style="padding: 10px 70px 10px 0;">USB Tethering</label>
-                    <SfSwitch @bind-Checked="@isUSB" @onkeypress="@onFocusx" @onfocus="onFocus" @onclick="onYes" ></SfSwitch>
+                    <SfSwitch @bind-Checked="@isUSB" @onkeypress="@onFocusx" @onfocus="onFocus" @onclick="onYes"></SfSwitch>
                 </div>
+
+               
+                <div>
+                    <label style="padding: 10px 70px 10px 0;">tech support test</label>
+                    <SfSwitch @bind-Checked="@isChecked" ValueChange="change" TChecked="bool"></SfSwitch>
+                </div>
+
+
                 <div>
                     <label style="padding: 10px 24px 10px 0; ">Portable Wi-Fi hotspot</label>
                     <SfSwitch @onfocus="onFocus" @bind-Checked="@ishotspot"></SfSwitch>
@@ -92,6 +100,12 @@
     private bool isUSB = true;
     private bool ishotspot = false;
     private bool isBluetooth = false;
+    private bool isChecked = true;
+
+    public void change (ChangeEventArgs<bool> args)
+    {
+        System.Console.WriteLine("tech support example toggle button");
+    }
 
     private void onYes()
     {
